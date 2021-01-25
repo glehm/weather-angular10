@@ -1,0 +1,53 @@
+<div class="rectangle-top">
+  <div class="container text-center">
+    <h1>WEATHER IN YOUR CITY</h1>
+    <div class="row">
+      <!-- Start, form to search for cities -->
+      <form [formGroup]="formSearch" (ngSubmit)="onSubmit(formSearch.value)" class="input-group col-xl-6 offset-xl-3" enctype="multipart/form-data">
+          <input type="text" id="searchCity" formControlName="searchCity" class="form-control input-search" placeholder="Your city name">
+          <button class="btn-search" type="submit"><i class="ion-ios-search-strong"></i></button>
+      </form>
+      <!-- End, form to search for cities -->
+    </div>      
+  </div>  
+</div>
+
+<div *ngIf="valueActiveroute != undefined" class="container city-section">
+  <!-- Start, details of the city found -->
+  <div class="row" *ngFor="let result of resultSearchCity">
+    <div class="city-card col-xl-8 offset-xl-2" (click)="detailsCity(result.id)">
+      <div class="highlight-temperature">
+        <h1>{{result.temp.toFixed(1)}}°C</h1>
+      </div>
+      <div class="city-details">
+        <h1>{{result.name}}, {{result.country}}</h1>
+        <img src="{{result.countryImg}}">
+        <div class="temperature-details">
+          <span>Max</span><h2 class="max">{{result.tempMax.toFixed(1)}} °C</h2>
+          <span>Min</span><h2 class="min">{{result.tempMin.toFixed(1)}} °C</h2>
+        </div>
+      </div>
+      <div class="temperature-symbol">
+        <img src="{{result.iconImg}}">
+        <p>{{result.description}}</p>
+      </div>
+    </div>
+  </div>
+  <!-- End, details of the city found -->
+  
+  <div class="row">
+    <!-- Start, found no city -->
+    <div *ngIf="resultSearchCity.length == 0 && valueActiveroute != undefined && !loading" class="no-results-card col-xl-8 offset-xl-2">
+      <h1>No cities found</h1>  
+    </div>
+    <!-- End, found no city -->
+
+    <!-- Start, loading icon -->
+    <div *ngIf="loading" class="no-results-card col-xl-8 offset-xl-2">
+      <div class="spinner-border m-5" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- End, loading icon -->
+  </div>
+</div>

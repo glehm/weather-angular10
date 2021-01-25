@@ -1,0 +1,232 @@
+.rectangle-top {
+    font-family: Roboto-Regular;
+    height: 300px;
+    background-color: #39a3db;
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+}
+.rectangle-top h1 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.row {
+    margin: 0 15px;
+}
+.input-group {
+    padding: 0px;
+}
+.input-search {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    height: 48px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 4px !important;
+}
+.input-search:focus, .input-search:active {
+    border: 1px solid #ced4da;
+}
+.btn-search {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-left: 0;
+    height: 48px; 
+    border-top-right-radius: 0.25em;
+    border-bottom-right-radius: 0.25em;
+    z-index: 999;
+    outline: 0;
+    padding: 0px 14px;
+    position: absolute;
+    right: 0;
+}
+.btn-search i {
+    font-size: 22px;
+    color: #39a3db;
+}
+.city-section {
+    margin-top: -40px;
+}
+.city-card {
+    padding: 18px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin-bottom: 26px;
+    display: flex;    
+    align-items: center;
+    cursor: pointer;
+}
+.city-section .highlight-temperature {
+    width: 200px;
+    height: 138px;
+    border-radius: 4px;
+    border: solid 1px #f0f0f0;
+    background-color: #f0f0f0;
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    float: left;
+    padding: 14px;
+}
+.city-section .highlight-temperature h1 {
+    opacity: 0.75;
+    font-family: Roboto-Bold;
+    font-size: 48px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3c3c3c;
+}
+.city-section .city-details {
+    margin-left: 46px;
+    width: auto;
+    float: left;
+}
+.city-section .city-details  h1 {
+    font-family: Roboto-Regular;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #39a3db;
+    float: left;
+}
+.city-section .city-details  img {
+    margin-left: 10px;
+}
+.city-section .city-details .temperature-details {
+    margin-top: 22px
+}
+.city-section .city-details .temperature-details span {
+    opacity: 0.5;
+    font-family: Roboto-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #3c3c3c;
+    float: left;
+}
+.city-section .city-details .temperature-details h2 {
+    font-family: Roboto-Regular;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    margin-left: 70px;
+}
+.city-section .city-details .temperature-details .max {
+    color: #b30000;
+}
+.city-section .city-details .temperature-details .min {
+    color: #4a90e2;
+}
+.city-section .temperature-symbol {
+    text-align: center;
+    margin-left: auto;
+}
+.city-section .temperature-symbol p {
+    opacity: 0.75;
+    font-family: Roboto-Medium;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3c3c3c;
+    margin: 6px 0px 0px 0px;
+}
+.city-section .temperature-symbol img {
+    width: 50px;
+    height: 50px;
+}
+.no-results-card {
+    border-radius: 4px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin-bottom: 26px;
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+}
+.no-results-card h1 {
+    opacity: 0.75;
+    font-family: Roboto-Bold;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3c3c3c;
+    padding: 30px 0px;
+    margin-bottom: 0px;
+}
+
+/* MEDIA SCREEN*/
+@media (max-width: 248px) 
+{
+    .city-card {
+        display: block;
+    }
+    .city-section .highlight-temperature {
+        width: 100%;
+        height: 98px;
+    }
+    .city-section .highlight-temperature h1 {
+        font-size: 28px;
+    }
+    .city-section .city-details {
+        margin: 0px;
+        padding-top: 14px;
+    }
+}
+@media (min-width: 249px) and (max-width: 360px)
+{
+    .city-card {
+        display: block;
+    }
+    .city-section .highlight-temperature {
+        width: 100%;
+        height: 98px;
+    }
+    .city-section .highlight-temperature h1 {
+        font-size: 34px;
+    }
+    .city-section .city-details {
+        margin: 0px;
+        padding-top: 14px;
+        width: 100%;
+    }
+}
+@media (min-width: 361px) and (max-width: 575px) 
+{
+    .city-card {
+        display: block;
+    }
+    .city-section .highlight-temperature {
+        width: 100%;
+        height: 98px;
+    }
+    .city-section .city-details {
+        margin: 0px;
+        padding-top: 14px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,79 @@
+<div class="rectangle-top">
+  <div class="container text-center">
+    <div class="row">
+      <!-- Start, form to search for cities -->
+      <form [formGroup]="formSearch" (ngSubmit)="onSubmit(formSearch.value)" class="input-group col-xl-6 offset-xl-3" enctype="multipart/form-data">
+          <input type="text" id="searchCity" formControlName="searchCity" class="form-control input-search" placeholder="Your city name">
+          <button class="btn-search" type="submit"><i class="ion-ios-search-strong"></i></button>
+      </form>
+      <!-- End, form to search for cities -->
+    </div>      
+  </div>  
+</div>
+  
+<div *ngIf="!loading" class="container city-section">
+  <div class="description-city">
+    <h1>Weather in {{detailsCity.name}}, {{detailsCity.country}}</h1>
+    <p>{{currentDate}}</p>
+  </div>    
+  <div class="row">
+    <div class="city-card col-xl-8 offset-xl-2">
+      <!-- Start, description of the current day -->
+      <div class="highlight-temperature">
+          <div class="temperature">
+              <h1>{{detailsCity.temp.toFixed(1)}} °C</h1>                
+          </div>
+          <div class="temperature-symbol">
+              <img src="{{detailsCity.iconImg}}">
+              <p>{{detailsCity.description}}</p>
+          </div>
+      </div>
+      <div class="city-details">
+          <span>Max</span><h2 class="max">{{detailsCity.max.toFixed(1)}} °C</h2>
+          <div class="separator"></div>
+          <span>Min</span><h2 class="min">{{detailsCity.min.toFixed(1)}} °C</h2>
+          <div class="separator"></div>
+          <span>Sunrise</span><h2>{{detailsCity.sunrise}}</h2>
+          <div class="separator"></div>
+          <span>Sunset</span><h2>{{detailsCity.sunset}}</h2>
+          <div class="separator"></div>
+      </div>
+      <!-- End, description of the current day -->
+
+      <!-- Start, weather for the next few days -->
+      <div class="weather-forecast">
+        <h1>5 day weather forecast</h1>
+        <p>every 3 hours</p>
+      </div>
+      <div class="next-days-forecast">
+        <div class="line-forecast" *ngFor="let result of resultDetailsCity; let i= index" [ngClass]="i == 0 || (resultDetailsCity[i-1].day != result.day) ? 'contrast' : ''">
+          <div class="date">
+            <h1>{{result.day}}</h1>
+            <p>{{result.hour}}</p>
+          </div>
+          <div class="description">
+            <img src="{{result.iconImg}}">
+            <p>{{result.description}}</p>
+          </div>
+          <div class="max-min">
+            <h1 class="max">{{result.tempMax.toFixed(1)}}°C</h1>
+            <h1 class="min">{{result.tempMin.toFixed(1)}}°C</h1>
+          </div>
+        </div>
+      </div>
+      <!-- End, weather for the next few days -->
+    </div>
+  </div>
+</div>
+
+<!-- Start, loading icon -->
+<div *ngIf="loading" class="container">
+  <div class="row">
+    <div class="no-results-card col-xl-8 offset-xl-2 text-center">
+      <div class="spinner-border m-5" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End, loading icon -->
