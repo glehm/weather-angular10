@@ -1,4 +1,5 @@
-Projeto realizado para aprendizagem de Angular 10.2.0
+Project developed for learning Angular 10.2.0
 
-Guilherme Lehm da Silva
-https://github.com/glehm
+<img src="https://raw.githubusercontent.com/glehm/weather-angular10/master/print.gif">
+
+Guilherme Lehm
